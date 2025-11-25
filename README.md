@@ -84,8 +84,11 @@ mongodb+srv://<usuario>:<senha>@cluster01.<id>.mongodb.net/
 Esse script cria:
 
 ✔ 3 reality shows
+
 ✔ 10 participantes cada
+
 ✔ 50 prêmios
+
 ✔ relações de prêmios entregues
 
 Execute:
@@ -123,24 +126,20 @@ Retorna:
 ### 🔸 GET /idade/:nome_reality
 Retorna:
 
-Participante mais novo
-
-Participante mais velho
+- Participante mais novo
+- Participante mais velho
 
 ### 🔸 GET /maior/:valor
 Retorna:
-
-Realities onde alguém ganhou prêmio com valor ≥ parâmetro
+- Realities onde alguém ganhou prêmio com valor ≥ parâmetro
 
 ### 🔸 GET /total
 Retorna:
-
-Quantidade total de prêmios por reality show
+- Quantidade total de prêmios por reality show
 
 ### 🔸 GET /audiencia
 Retorna:
-
-Emissoras e soma da audiência dos seus realities
+- Emissoras e soma da audiência dos seus realities
 
 ### 🔸 POST /votar
 Body:
