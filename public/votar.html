@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Votação</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <h1>Votação</h1>
+
+  <select id="participante"></select>
+  <button onclick="votar()">Votar</button>
+
+  <canvas id="grafico" width="400" height="200"></canvas>
+
+  <script>
+    const url = new URLSearchParams(window.location.search);
+    const show_id = url.get("show");
+
+    async function carregarParticipantes() {
+      const data = await fetch(`/votos/${show_id}`).then(r => r.json());
+      window.participantes = data;
+
+      const sel = document.getElementById("participante");
+      data.forEach(p => {
+        const opt = document.createElement("option");
+        opt.value = p._id;
+        opt.innerText = p.nome;
+        sel.appendChild(opt);
+      });
+
+      atualizarGrafico();
+    }
+
+    async function votar() {
+      const participante_id = document.getElementById("participante").value;
+
+      await fetch("/votar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ show_id, participante_id })
+      });
+
+      carregarParticipantes();
+    }
+
+    let chart;
+    function atualizarGrafico() {
+      const labels = window.participantes.map(p => p.nome);
+      const dados = window.participantes.map(p => p.total_votos);
+
+      if (chart) chart.destroy();
+
+      chart = new Chart(document.getElementById("grafico"), {
+        type: "bar",
+        data: {
+          labels,
+          datasets: [{
+            label: "Votos",
+            data: dados
+          }]
+        }
+      });
+    }
+
+    carregarParticipantes();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "bsonType": "object",
+  "required": ["descricao", "valor"],
+  "properties": {
+    "descricao": { "bsonType": "string" },
+    "valor": { "bsonType": "double" }
+  }
+}

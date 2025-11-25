@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background: #f2f2f2;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+#lista {
+    max-width: 900px;
+    margin: auto;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    margin: 15px auto;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #0002;
+    width: 80%;
+}
+
+.botao {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2196f3;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.botao:hover {
+    background: #1976d2;
+}
+
+button {
+    padding: 10px;
+    background: #4caf50;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #45a049;
+}
+
+select {
+    padding: 5px;
+    margin: 10px;
+}

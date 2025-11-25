@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "nome": "Desafio Final",
+    "emissora": "Emissora 1",
+    "audiencia_pontos": 32
+  },
+  {
+    "id": 2,
+    "nome": "Casa do Caos",
+    "emissora": "Emissora 2",
+    "audiencia_pontos": 27
+  },
+  {
+    "id": 3,
+    "nome": "Ilha da Verdade",
+    "emissora": "Emissora 3",
+    "audiencia_pontos": 41
+  }
+]

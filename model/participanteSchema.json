@@ -1,0 +1,10 @@
+{
+  "bsonType": "object",
+  "required": ["id_show", "id_participante", "id_premio"],
+  "properties": {
+    "id_show": { "bsonType": "objectId" },
+    "id_participante": { "bsonType": "objectId" },
+    "id_premio": { "bsonType": "objectId" },
+    "data": { "bsonType": "date" }
+  }
+}

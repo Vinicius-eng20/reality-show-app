@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Reality Shows</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Reality Shows</h1>
+
+    <div id="lista"></div>
+
+    <script>
+        async function carregar() {
+            const realities = await fetch("/shows").then(r => r.json());
+
+            const div = document.getElementById("lista");
+
+            realities.forEach(s => {
+                const box = document.createElement("div");
+                box.className = "card";
+
+                box.innerHTML = `
+                    <h2>${s.nome}</h2>
+                    <p><strong>Emissora:</strong> ${s.emissora}</p>
+                    <p><strong>Audiência:</strong> ${s.audiencia_pontos} pontos</p>
+
+                    <a href="votar.html?show=${s._id}" class="botao">
+                        Votar nos Participantes
+                    </a>
+                `;
+
+                div.appendChild(box);
+            });
+        }
+
+        carregar();
+    </script>
+</body>
+</html>

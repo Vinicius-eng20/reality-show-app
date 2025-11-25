@@ -1,0 +1,23 @@
+{
+  "bsonType": "object",
+  "required": ["nome", "emissora", "audiencia_pontos", "participantes"],
+  "properties": {
+    "nome": { "bsonType": "string" },
+    "emissora": { "bsonType": "string" },
+    "audiencia_pontos": { "bsonType": "int" },
+    "participantes": {
+      "bsonType": "array",
+      "items": {
+        "bsonType": "object",
+        "required": ["_id", "nome", "idade", "total_votos", "eliminado"],
+        "properties": {
+          "_id": { "bsonType": "objectId" },
+          "nome": { "bsonType": "string" },
+          "idade": { "bsonType": "int" },
+          "total_votos": { "bsonType": "int" },
+          "eliminado": { "bsonType": "bool" }
+        }
+      }
+    }
+  }
+}

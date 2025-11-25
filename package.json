@@ -1,0 +1,14 @@
+{
+  "name": "reality-show-app",
+  "version": "1.0.0",
+  "description": "Aplicação de reality show com MongoDB e Node.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node data/seed.js"
+  },
+  "dependencies": {
+    "express": "^4.19.0",
+    "mongodb": "^6.3.0"
+  }
+}
